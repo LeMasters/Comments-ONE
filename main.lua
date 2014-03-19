@@ -18,7 +18,7 @@ local function linearXY ( tempX, tempY )
 	local arrayPosition = (tempY*xPetri)+tempX
 	return arrayPosition
 end
-local function twoDXY ( arrayPosition )
+local function twoDXY ( arrayPosition )-- to make the grids
 	local tempY = arrayPosition % xPetri
 	local tempX = arrayPosition - tempY
 	return tempX, tempY
@@ -65,7 +65,7 @@ local function showPetriDish ( )
 	for x = 0, xPetri - 1 do
 		for y = 0, yPetri - 1 do
 			cellNumber = linearXY ( x , y )
-			if ( petriDish [ cellNumber ] ) then
+			if ( petriDish [ cellNumber ] ) then  -- to decide the colors of the grids(either green or pink)
 				cellStatus [cellNumber] =  display.newRect(0,0,cellWide,cellHigh)
 				cellStatus [cellNumber]:setFillColor(.85,.25,.6)
 			else
